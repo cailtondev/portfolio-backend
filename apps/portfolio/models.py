@@ -3,38 +3,44 @@ from django.db import models
 
 
 class Home(models.Model):
-    intro_description = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.intro_description
+        return self.title
 
 
-class More(models.Model):
-    more_description = models.CharField(max_length=255)
-
-    def __str__(self):
-        return self.more_description
-
-
-class Skills(models.Model):
-    tag_span = models.CharField(max_length=70)
-    skills_description = models.CharField(max_length=200)
+class WebDevelopmentOffer(models.Model):
+    title = models.CharField(max_length=255)
+    paragraph = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.skills_description
+        return self.title
 
 
-class Projects(models.Model):
+class WebDevelopmentCard(models.Model):
+    offer = models.ForeignKey(WebDevelopmentOffer, on_delete=models.CASCADE)
+    card_title = models.CharField(max_length=150)
+    card_paragraph = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.card_title
+
+
+class WebDevelopmentTechnologies(models.Model):
+    title = models.CharField(max_length=50)
+    icon_link = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
+
+
+class WebDevelopmentProjects(models.Model):
     tag = models.CharField(max_length=30, default='#Front-End')
-    title = models.CharField(max_length=200)
-    image_project = models.CharField(max_length=300)
+    title = models.CharField(max_length=255)
+    paragraph = models.CharField(max_length=255)
+    image_link = models.CharField(max_length=255)
     alt_image = models.CharField(max_length=100)
-    link_previw = models.CharField(max_length=300)
-    link_github = models.CharField(max_length=300)
-    description_project = models.CharField(
-        max_length=120, default='Description for project'
-    )
-    skills = models.CharField(max_length=120, default='Skills')
+    link_preview = models.CharField(max_length=255)
 
     def __str__(self):
         return self.title
