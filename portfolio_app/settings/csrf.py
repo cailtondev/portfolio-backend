@@ -8,7 +8,9 @@ CSRF_TRUSTED_ORIGINS = [
     'http://portfolio-backend-git-feature-api-cailtondevs-projects.vercel.app',
     'https://portfolio-backend-git-feature-api-cailtondevs-projects.vercel.app',
     'http://backend.cailtonoliveira.com.br',
-    'https://backend.cailtonoliveira.com.br'
+    'https://backend.cailtonoliveira.com.br',
+    'http://graceful-longma-9a1bff.netlify.app/',
+    'https://graceful-longma-9a1bff.netlify.app/'
 ]
 
 
@@ -22,5 +24,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://portfolio-backend-git-feature-api-cailtondevs-projects.vercel.app',
     'https://portfolio-backend-git-feature-api-cailtondevs-projects.vercel.app',
     'http://backend.cailtonoliveira.com.br',
-    'https://backend.cailtonoliveira.com.br'
+    'https://backend.cailtonoliveira.com.br',
+    'http://graceful-longma-9a1bff.netlify.app/',
+    'https://graceful-longma-9a1bff.netlify.app/'
 ]
