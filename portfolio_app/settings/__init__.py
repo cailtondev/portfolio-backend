@@ -4,5 +4,6 @@ from .middlewares import *
 from .templates import *
 from .database import *
 from .security import *
+from .csrf import *
 from .assets import *
 from .i18n import *

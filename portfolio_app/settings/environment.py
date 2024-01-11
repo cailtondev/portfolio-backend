@@ -1,6 +1,7 @@
 from pathlib import Path
 from dotenv import load_dotenv
-import os, sys
+import os
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -9,7 +10,18 @@ load_dotenv(BASE_DIR / '.env')
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG')
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'cailtonoliveira.com',
+    'cailtonoliveira.com',
+    'www.cailtonoliveira.com',
+    'www.cailtonoliveira.com',
+    'portfolio-backend-git-feature-api-cailtondevs-projects.vercel.app',
+    'portfolio-backend-git-feature-api-cailtondevs-projects.vercel.app',
+    'backend.cailtonoliveira.com.br',
+    'backend.cailtonoliveira.com.br'
+]
 
 ROOT_URLCONF = 'portfolio_app.urls'
 WSGI_APPLICATION = 'portfolio_app.wsgi.app'

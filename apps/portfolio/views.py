@@ -24,7 +24,7 @@ class BaseAPIView(View):
     fields = []
 
     def get_data(self):
-        return self.model.objects.values(*self.fields)
+        return self.model.objects.values('id', *self.fields)
 
     def get(self, request, *args, **kwargs):
         data = self.get_data()
@@ -47,7 +47,7 @@ class WebDevelopmentCardAPIView(BaseAPIView):
 
 
 class WebDevelopmentTechnologiesAPIView(BaseAPIView):
-    model = WebDevelopmentCard
+    model = WebDevelopmentTechnologies
     fields = ['title', 'icon_link']
 
 
