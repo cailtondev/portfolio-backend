@@ -21,8 +21,8 @@ ALLOWED_HOSTS = [
     'portfolio-backend-git-feature-api-cailtondevs-projects.vercel.app',
     'backend.cailtonoliveira.com.br',
     'backend.cailtonoliveira.com.br',
-    'http://graceful-longma-9a1bff.netlify.app/',
-    'https://graceful-longma-9a1bff.netlify.app/'
+    'graceful-longma-9a1bff.netlify.app',
+    'graceful-longma-9a1bff.netlify.app'
 ]
 
 ROOT_URLCONF = 'portfolio_app.urls'

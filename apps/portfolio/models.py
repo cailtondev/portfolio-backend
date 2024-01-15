@@ -49,3 +49,9 @@ class WebDevelopmentProjects(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class ResumeME(models.Model):
+    id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=80)
+    paragraph = models.TextField()
