@@ -12,5 +12,6 @@ urlpatterns = [
          name='webdevelopmenttechnologies_api'),
     path('api/projects/', WebDevelopmentProjectsAPIView.as_view(),
          name='webdevelopmentprojects_api'),
-    path('api/resume/', ResumeMEAPIView.as_view(), name='ResumeME')
+    path('api/resume/', ResumeMEAPIView.as_view(), name='ResumeME'),
+    path('api/contact/', ContactAPIView.as_view(), name='Contact')
 ]

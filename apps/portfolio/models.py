@@ -55,3 +55,12 @@ class ResumeME(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=80)
     paragraph = models.TextField()
+
+
+class Contact(models.Model):
+    id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=30)
+    paragraph = models.CharField(max_length=200)
+    email = models.CharField(max_length=150)
+    phone = models.CharField(max_length=10)
+    address = models.CharField(max_length=50)

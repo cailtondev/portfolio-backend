@@ -5,7 +5,8 @@ from .models import (
     WebDevelopmentCard,
     WebDevelopmentTechnologies,
     WebDevelopmentProjects,
-    ResumeME
+    ResumeME,
+    Contact
 )
 
 
@@ -19,3 +20,4 @@ admin.site.register(WebDevelopmentCard)
 admin.site.register(WebDevelopmentTechnologies)
 admin.site.register(WebDevelopmentProjects, WebDevelopmentProjectsAdmin)
 admin.site.register(ResumeME)
+admin.site.register(Contact)

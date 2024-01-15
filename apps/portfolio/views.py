@@ -61,3 +61,7 @@ class ResumeMEAPIView(BaseAPIView):
     model = ResumeME
     fields = ["title", "paragraph"]
 
+
+class ContactAPIView(BaseAPIView):
+    model = Contact
+    fields = ["title", "paragraph", "email", "phone", "address"]
