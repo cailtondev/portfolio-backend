@@ -1,3 +1,4 @@
+from .models import Home, WebDevelopmentOffer, WebDevelopmentCard, WebDevelopmentTechnologies, WebDevelopmentProjects, ResumeME, Contact
 from django.http import JsonResponse
 from .models import *
 from django.views import View
@@ -19,49 +20,63 @@ def index(request):
     return HttpResponse(html)
 
 
-class BaseAPIView(View):
-    model = None
-    fields = []
+# class BaseAPIView(View):
+#     model = None
+#     fields = []
 
-    def get_data(self):
-        return self.model.objects.values('id', *self.fields)
+#     def get_data(self):
+#         return self.model.objects.values('id', *self.fields)
 
+#     def get(self, request, *args, **kwargs):
+#         data = self.get_data()
+#         return JsonResponse(list(data), safe=False)
+
+
+# class HomeAPIView(BaseAPIView):
+#     model = Home
+#     fields = ['title']
+
+
+# class WebDevelopmentOfferAPIView(BaseAPIView):
+#     model = WebDevelopmentOffer
+#     fields = ['title', 'paragraph']
+
+
+# class WebDevelopmentCardAPIView(BaseAPIView):
+#     model = WebDevelopmentCard
+#     fields = ['offer', 'card_title', 'card_paragraph']
+
+
+# class WebDevelopmentTechnologiesAPIView(BaseAPIView):
+#     model = WebDevelopmentTechnologies
+#     fields = ['title', 'icon_link']
+
+
+# class WebDevelopmentProjectsAPIView(BaseAPIView):
+#     model = WebDevelopmentProjects
+#     fields = ['tag', 'title', 'paragraph',
+#               'image_link', 'alt_image', 'link_preview']
+
+
+# class ResumeMEAPIView(BaseAPIView):
+#     model = ResumeME
+#     fields = ["title", "paragraph"]
+
+
+# class ContactAPIView(BaseAPIView):
+#     model = Contact
+#     fields = ["title", "paragraph", "email", "phone", "address"]
+
+
+class ConsolidatedDataAPIView(View):
     def get(self, request, *args, **kwargs):
-        data = self.get_data()
-        return JsonResponse(list(data), safe=False)
-
-
-class HomeAPIView(BaseAPIView):
-    model = Home
-    fields = ['title']
-
-
-class WebDevelopmentOfferAPIView(BaseAPIView):
-    model = WebDevelopmentOffer
-    fields = ['title', 'paragraph']
-
-
-class WebDevelopmentCardAPIView(BaseAPIView):
-    model = WebDevelopmentCard
-    fields = ['offer', 'card_title', 'card_paragraph']
-
-
-class WebDevelopmentTechnologiesAPIView(BaseAPIView):
-    model = WebDevelopmentTechnologies
-    fields = ['title', 'icon_link']
-
-
-class WebDevelopmentProjectsAPIView(BaseAPIView):
-    model = WebDevelopmentProjects
-    fields = ['tag', 'title', 'paragraph',
-              'image_link', 'alt_image', 'link_preview']
-
-
-class ResumeMEAPIView(BaseAPIView):
-    model = ResumeME
-    fields = ["title", "paragraph"]
-
-
-class ContactAPIView(BaseAPIView):
-    model = Contact
-    fields = ["title", "paragraph", "email", "phone", "address"]
+        consolidated_data = {
+            'home': list(Home.objects.values('id', 'title')),
+            'webdev_offer': list(WebDevelopmentOffer.objects.values('id', 'title', 'paragraph')),
+            'webdev_card': list(WebDevelopmentCard.objects.values('id', 'offer', 'card_title', 'card_paragraph')),
+            'webdev_technology': list(WebDevelopmentTechnologies.objects.values('id', 'title', 'icon_link')),
+            'webdev_project': list(WebDevelopmentProjects.objects.values('id', 'tag', 'title', 'paragraph', 'image_link', 'alt_image', 'link_preview')),
+            'resume': list(ResumeME.objects.values('id', 'title', 'paragraph')),
+            'contact': list(Contact.objects.values('id', 'title', 'paragraph', 'email', 'phone', 'address')),
+        }
+        return JsonResponse(consolidated_data, safe=False)
