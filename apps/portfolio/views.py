@@ -44,7 +44,7 @@ class WebDevelopmentOfferAPIView(BaseAPIView):
 
 class WebDevelopmentCardAPIView(BaseAPIView):
     model = WebDevelopmentCard
-    fields = ['offer', 'card_title', 'card_paragraph']
+    fields = ['card_title', 'card_paragraph']
 
 
 class WebDevelopmentTechnologiesAPIView(BaseAPIView):
