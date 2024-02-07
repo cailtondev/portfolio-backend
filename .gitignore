@@ -7,6 +7,7 @@ media
 migrations
 staticfiles_build
 .vscode
+backup.txt
 
 # Environments 
 .virtualenv 
