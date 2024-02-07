@@ -39,9 +39,9 @@ class WebDevelopmentProjects(models.Model):
     tag = models.CharField(max_length=30, default='#Front-End')
     title = models.CharField(max_length=255)
     paragraph = models.CharField(max_length=255)
-    image_link = models.CharField(max_length=255)
+    image_link = models.TextField()
     alt_image = models.CharField(max_length=100)
-    link_preview = models.CharField(max_length=255)
+    link_preview = models.TextField()
 
     def __str__(self):
         return self.title
