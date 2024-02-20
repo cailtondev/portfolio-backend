@@ -11,7 +11,7 @@ from .models import (
 
 
 class WebDevelopmentProjectsAdmin(admin.ModelAdmin):
-    list_display = ('title', 'tag', 'image_link', 'link_preview')
+    list_display = ('tag', 'image_link', 'link_preview')
 
 
 admin.site.register(Home)
