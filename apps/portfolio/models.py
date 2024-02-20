@@ -42,7 +42,7 @@ class WebDevelopmentProjects(models.Model):
     link_preview = models.TextField()
 
     def __str__(self):
-        return self.title
+        return self.tag
 
 
 class ResumeME(models.Model):
