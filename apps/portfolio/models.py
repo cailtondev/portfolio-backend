@@ -37,8 +37,6 @@ class WebDevelopmentTechnologies(models.Model):
 class WebDevelopmentProjects(models.Model):
     id = models.AutoField(primary_key=True)
     tag = models.CharField(max_length=30, default='#Front-End')
-    title = models.CharField(max_length=255)
-    paragraph = models.CharField(max_length=255)
     image_link = models.TextField()
     alt_image = models.CharField(max_length=100)
     link_preview = models.TextField()

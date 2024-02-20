@@ -13,7 +13,7 @@ def index(request):
     <html>
         <body>
             <h1>Hello from Vercel!</h1>
-            <p>The current time is { now }.</p>
+            <p>The current time is {now}.</p>
         </body>
     </html>
     '''
@@ -54,8 +54,7 @@ class WebDevelopmentTechnologiesAPIView(BaseAPIView):
 
 class WebDevelopmentProjectsAPIView(BaseAPIView):
     model = WebDevelopmentProjects
-    fields = ['tag', 'title', 'paragraph',
-              'image_link', 'alt_image', 'link_preview']
+    fields = ['tag', 'image_link', 'alt_image', 'link_preview']
 
 
 class ResumeMEAPIView(BaseAPIView):
