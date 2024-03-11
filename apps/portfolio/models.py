@@ -40,6 +40,7 @@ class WebDevelopmentProjects(models.Model):
     image_link = models.TextField()
     alt_image = models.CharField(max_length=100)
     link_preview = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.tag

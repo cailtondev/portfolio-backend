@@ -54,7 +54,7 @@ class WebDevelopmentTechnologiesAPIView(BaseAPIView):
 
 class WebDevelopmentProjectsAPIView(BaseAPIView):
     model = WebDevelopmentProjects
-    fields = ['tag', 'image_link', 'alt_image', 'link_preview']
+    fields = ['tag', 'image_link', 'alt_image', 'link_preview', 'created_at']
 
 
 class ResumeMEAPIView(BaseAPIView):
