@@ -39,6 +39,8 @@ class WebDevelopmentProjects(models.Model):
     tag = models.CharField(max_length=30, default='#Front-End')
     image_link = models.TextField()
     alt_image = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, default='title')
+    paragraph = models.TextField(default='Paragraph')
     link_preview = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
